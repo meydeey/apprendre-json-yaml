@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apprendre JSON & YAML — LE LABO IA</title>
+    <meta
+      name="description"
+      content="Apprends JSON et YAML de zero avec un editeur interactif, un validateur et un convertisseur. Par LE LABO IA."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F4CB;</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menu">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <a
+        href="#"
+        class="header-logo"
+        onclick="
+          navigateTo(0);
+          return false;
+        "
+      >
+        <div class="header-logo-icon">{:}</div>
+        <span>LE LABO IA</span>
+      </a>
+
+      <div class="header-progress">
+        <span class="header-progress-label" id="progress-label"
+          >Progression</span
+        >
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+        <span class="header-progress-count" id="progress-count">0/13</span>
+      </div>
+
+      <div class="header-right">
+        <button class="btn-reset-all" onclick="resetAllProgress()">
+          Reinitialiser
+        </button>
+      </div>
+    </header>
+
+    <!-- Layout -->
+    <div class="app-layout">
+      <div class="sidebar-overlay"></div>
+      <nav class="sidebar">
+        <ul class="sidebar-nav" id="sidebar-nav"></ul>
+      </nav>
+      <main class="main-content" id="sections-container"></main>
+    </div>
+
+    <!-- Celebration -->
+    <div class="celebration-overlay" id="celebration">
+      <div class="celebration-card">
+        <div class="celebration-emoji">&#127881;</div>
+        <h2>Felicitations !</h2>
+        <p>
+          Tu maitrises JSON et YAML ! Tu peux maintenant lire et ecrire des
+          fichiers de config, des reponses API, et convertir entre les deux
+          formats.
+        </p>
+        <button class="btn-close-celebration" onclick="closeCelebration()">
+          Merci !
+        </button>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
